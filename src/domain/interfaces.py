@@ -9,10 +9,17 @@ class IModelRepository(ABC):
     async def get_by_id(self, model_id: str) -> Optional[LLMModel]: ...
 
     @abstractmethod
-    async def get_all(self) -> List[LLMModel]: ...
+    async def get_all(
+        self, 
+        provider: Optional[str] = None,
+        best_for: Optional[str] = None,
+        is_free: bool = False,
+        min_intelligence: Optional[float] = None,
+        sort_by: Optional[str] = None
+    ) -> List[LLMModel]: ...
 
     @abstractmethod
-    async def save(self, model: LLMModel) -> LLMModel: ...
+    async def save(self, model: LLMModel) -> None: ...
 
     @abstractmethod
     async def save_batch(self, models: List[LLMModel]) -> None: ...
@@ -25,3 +32,9 @@ class IFetcherGateway(ABC):
 
     @abstractmethod
     async def fetch_benchmarks(self) -> List[dict]: ...
+
+class IStaticExporter(ABC):
+    """Port: Interface for exporting to a static file format."""
+    
+    @abstractmethod
+    async def export(self, models: List[LLMModel]) -> None: ...

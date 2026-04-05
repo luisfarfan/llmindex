@@ -1,81 +1,75 @@
-from typing import List, Optional, Dict
-from datetime import datetime
+from typing import List, Optional
 from pydantic import BaseModel, Field, computed_field
+from datetime import datetime
 
 class Pricing(BaseModel):
-    """Token pricing in USD per 1M tokens."""
+    """Pricing in USD per 1M tokens."""
     input: float = 0.0
     output: float = 0.0
 
 class Benchmarks(BaseModel):
-    """Performance metrics from ArtificialAnalysis."""
+    """Evaluation metrics from ArtificialAnalysis."""
+    intelligence_score: Optional[float] = None
+    speed_score: Optional[float] = None # TPS
     reasoning_score: Optional[float] = None
     coding_score: Optional[float] = None
-    intelligence_score: Optional[float] = None
-    speed_score: Optional[float] = None
     cost_efficiency: Optional[float] = None
+    elo_score: Optional[float] = None # Multimodal Quality Rating (v2)
 
 class LLMModel(BaseModel):
     """
-    Core Domain Entity: Unified LLM Registry Item.
-    Matches the schema defined in docs/02-data-schema.md.
+    Unified LLM Model Entity.
+    The single source of truth for a model's capabilities and costs.
     """
-    id: str = Field(..., description="Unique model ID from OpenRouter")
+    id: str
     name: str
     provider: str
-    context_length: int
+    context_length: int = 0
     pricing: Pricing
-    modalities: List[str] = Field(default_factory=list)
+    modalities: List[str] = ["text"]
     benchmarks: Optional[Benchmarks] = None
-    last_synced: datetime = Field(default_factory=datetime.utcnow)
+    last_synced: datetime = Field(default_factory=datetime.now)
 
-    # Derived Classifications (Step 5 of prompt)
-    
     @computed_field
     @property
     def best_for(self) -> List[str]:
-        """Categorize model based on its benchmark strengths."""
+        """Dynamically Tag models based on unified data."""
         tags = []
-        if not self.benchmarks:
-            return tags
-            
-        if (self.benchmarks.coding_score or 0) >= 90:
-            tags.append("coding")
-        if (self.benchmarks.reasoning_score or 0) >= 92:
-            tags.append("reasoning")
-        if self.context_length >= 128000 and (self.benchmarks.intelligence_score or 0) >= 80:
+        if self.benchmarks:
+            if (self.benchmarks.coding_score or 0) > 80:
+                tags.append("coding")
+            if (self.benchmarks.intelligence_score or 0) > 85:
+                tags.append("reasoning")
+            if (self.benchmarks.speed_score or 0) > 100:
+                tags.append("real-time")
+            if self.benchmarks.elo_score:
+                tags.append("multimodal-high-fidelity")
+        
+        if "image" in self.modalities or "audio" in self.modalities:
+            if "multimodal" not in tags:
+                tags.append("multimodal")
+        
+        # Context-based tags
+        if self.context_length >= 128000:
             tags.append("rag")
-        if (self.benchmarks.speed_score or 0) >= 150:
-            tags.append("real-time")
-        if "image" in self.modalities and (self.benchmarks.intelligence_score or 0) >= 85:
-            tags.append("multimodal")
+            
         return tags
 
     @computed_field
     @property
-    def cost_level(self) -> str:
-        """Simple cost classification (Simplified for MVP, will be dynamic in Classifier)."""
-        avg_price = (self.pricing.input + self.pricing.output) / 2
-        if avg_price < 0.5: return "low"
-        if avg_price < 5.0: return "mid"
-        return "high"
-
-    @computed_field
-    @property
     def performance_tier(self) -> str:
-        """Categorize model by intelligence tier."""
-        score = (self.benchmarks.intelligence_score or 0) if self.benchmarks else 0
-        if score >= 95: return "frontier"
-        if score >= 85: return "high"
-        if score >= 60: return "mid"
-        return "low"
+        """Categorize models into tiers."""
+        base_score = self.benchmarks.intelligence_score if self.benchmarks else 0
+        if base_score > 90: return "frontier"
+        if base_score > 70: return "pro"
+        return "lite"
 
     @computed_field
     @property
     def efficiency_score(self) -> float:
-        """Combined metric: Intelligence / Cost."""
-        if not self.benchmarks or not self.benchmarks.intelligence_score or self.pricing.output <= 0:
+        """Calculate bang-for-buck score."""
+        if not self.benchmarks or not self.benchmarks.intelligence_score:
             return 0.0
-        # Formula: (Score / Cost per 1M Output Tokens)
-        raw_score = self.benchmarks.intelligence_score / (self.pricing.output * 1000) # Weighting cost
-        return round(min(1.0, raw_score / 100), 4) # Scaled for visibility
+        total_cost = self.pricing.input + self.pricing.output
+        if total_cost == 0: return 1.0 # Free is max efficiency
+        return round(self.benchmarks.intelligence_score / (total_cost + 0.01), 4)

@@ -1,0 +1,35 @@
+import logging
+from typing import List, Optional
+from src.domain.interfaces import IFetcherGateway
+from src.adapters.gateways.http_fetcher import BaseHTTPFetcher
+from src.infrastructure.config import get_settings
+
+logger = logging.getLogger(__name__)
+
+class OpenRouterFetcher(BaseHTTPFetcher, IFetcherGateway):
+    """Fetcher for the OpenRouter Models API."""
+    
+    def __init__(self):
+        super().__init__()
+        self.settings = get_settings()
+
+    async def fetch_catalog(self) -> List[dict]:
+        """Fetch models catalog from OpenRouter."""
+        headers = {
+            "Authorization": f"Bearer {self.settings.OPENROUTER_API_KEY}",
+            "HTTP-Referer": "https://llmindex.ai", # Required by OpenRouter for ranking
+            "X-Title": "LLMIndex"
+        }
+        
+        logger.info(f"Fetching OpenRouter catalog from {self.settings.OPENROUTER_MODELS_URL}")
+        data = await self.get(self.settings.OPENROUTER_MODELS_URL, headers=headers)
+        
+        if data and "data" in data:
+            return data["data"]
+        
+        logger.warning("Empty or invalid response from OpenRouter catalog.")
+        return []
+
+    async def fetch_benchmarks(self) -> List[dict]:
+        """OpenRouter doesn't provide ArtificialAnalysis-style benchmarks directly."""
+        return []
