@@ -1,6 +1,21 @@
 # CHANGELOG
 
 
+## v0.2.0 (2026-04-06)
+
+### Bug Fixes
+
+* fix: synchronize poetry.lock with pyproject.toml ([`3ff545a`](https://github.com/luisfarfan/llmindex/commit/3ff545a93037963c7e60bcf3e7283b11bdea758c))
+
+* fix: use official snok/install-poetry action for reliable path ([`098bdaa`](https://github.com/luisfarfan/llmindex/commit/098bdaa1bff1faec0a61967c6b81024a32842ec2))
+
+* fix: run poetry in non-interactive mode for CI/CD ([`2dfb477`](https://github.com/luisfarfan/llmindex/commit/2dfb4778bb3b9740cba970b9c6f2f3039308662a))
+
+### Features
+
+* feat: add comprehensive test suite and integrate with CI/CD ([`cff4072`](https://github.com/luisfarfan/llmindex/commit/cff40721a3e847418251bdc35d44804e8c4d9b5d))
+
+
 ## v0.1.0 (2026-04-06)
 
 ### Bug Fixes
