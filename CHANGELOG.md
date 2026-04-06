@@ -1,6 +1,13 @@
 # CHANGELOG
 
 
+## v0.2.1 (2026-04-06)
+
+### Bug Fixes
+
+* fix: simplify publish step and remove redundant build/rm ([`f9bcf95`](https://github.com/luisfarfan/llmindex/commit/f9bcf95da7ae7a8dfd0ad91ff4c644c61ee701fb))
+
+
 ## v0.2.0 (2026-04-06)
 
 ### Bug Fixes
