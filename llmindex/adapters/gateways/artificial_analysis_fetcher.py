@@ -1,20 +1,20 @@
-import aiohttp
-import asyncio
 import logging
 from typing import List, Dict, Any, Optional
 from llmindex.domain.interfaces import IFetcherGateway
+from llmindex.adapters.gateways.http_fetcher import BaseHTTPFetcher
 from llmindex.infrastructure.config import get_settings
 from rapidfuzz import process, fuzz
 
 logger = logging.getLogger(__name__)
 
-class ArtificialAnalysisFetcher(IFetcherGateway):
+class ArtificialAnalysisFetcher(BaseHTTPFetcher, IFetcherGateway):
     """
     Gateway Adapter for ArtificialAnalysis API v2.
     Fetches both LLM models and specialized Multimodal Media ratings.
     """
 
     def __init__(self):
+        super().__init__()
         settings = get_settings()
         self.api_key = settings.ARTIFICIAL_ANALYSIS_API_KEY
         self.base_url = "https://artificialanalysis.ai/api/v2/data"
@@ -35,11 +35,14 @@ class ArtificialAnalysisFetcher(IFetcherGateway):
         
         # --- Attempt API Fetch ---
         if self.api_key and self.api_key != "not-set":
-            async with aiohttp.ClientSession() as session:
-                for name, url in self.endpoints.items():
-                    data = await self._fetch_endpoint(session, name, url)
+            headers = {"x-api-key": self.api_key}
+            if "aa_" in self.api_key: # Likely AA v2 format
+                 headers = {"Authorization": f"Bearer {self.api_key}"}
+                 
+            for name, url in self.endpoints.items():
+                data = await self.get(url, headers=headers)
+                if data:
                     all_raw[name] = data
-                    await asyncio.sleep(1.0)
         
         # --- Local Fallback ---
         if not all_raw.get("models"):
@@ -49,7 +52,6 @@ class ArtificialAnalysisFetcher(IFetcherGateway):
                 logger.info(f"Using local benchmark data from {local_path}")
                 with open(local_path, "r") as f:
                     all_raw["models"] = json.load(f)
-                    # We treat all media categories as empty for the simple fallback for now
                     for cat in ["image", "video", "speech", "editing"]:
                         all_raw[cat] = []
             else:
@@ -80,17 +82,3 @@ class ArtificialAnalysisFetcher(IFetcherGateway):
                     names_index.append(m_name)
         
         return list(unified.values())
-
-    async def _fetch_endpoint(self, session: aiohttp.ClientSession, name: str, url: str) -> List[Dict[str, Any]]:
-        headers = {"x-api-key": self.api_key}
-        if "aa_" in self.api_key: # Likely AA v2 format
-             headers = {"Authorization": f"Bearer {self.api_key}"}
-             
-        try:
-            async with session.get(url, headers=headers) as response:
-                if response.status == 200:
-                    return await response.json()
-                return []
-        except Exception:
-            return []
-

@@ -1,5 +1,5 @@
 import pytest
-from src.domain.services.matching_engine import MatchingEngine
+from llmindex.domain.services.matching_engine import MatchingEngine
 
 @pytest.fixture
 def engine():

@@ -1,5 +1,5 @@
 import pytest
-from src.domain.entities import LLMModel, Pricing, Benchmarks
+from llmindex.domain.entities import LLMModel, Pricing, Benchmarks
 
 def test_llm_model_best_for_coding():
     """Verify that a model with high coding score is tagged as 'coding'."""
@@ -26,9 +26,9 @@ def test_llm_model_performance_tier():
         benchmarks=Benchmarks(intelligence_score=98.0)
     )
     
-    mid_model = LLMModel(
-        id="test/mid",
-        name="Mid",
+    pro_model = LLMModel(
+        id="test/pro",
+        name="Pro",
         provider="Test",
         context_length=8192,
         pricing=Pricing(),
@@ -36,7 +36,7 @@ def test_llm_model_performance_tier():
     )
     
     assert frontier_model.performance_tier == "frontier"
-    assert mid_model.performance_tier == "mid"
+    assert pro_model.performance_tier == "pro"
 
 def test_llm_model_efficiency_score():
     """Verify efficiency score calculation (Intelligence / Cost)."""
