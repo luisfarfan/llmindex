@@ -1,8 +1,8 @@
 import logging
 from typing import List, Optional
-from src.domain.interfaces import IFetcherGateway
-from src.adapters.gateways.http_fetcher import BaseHTTPFetcher
-from src.infrastructure.config import get_settings
+from llmindex.domain.interfaces import IFetcherGateway
+from llmindex.adapters.gateways.http_fetcher import BaseHTTPFetcher
+from llmindex.infrastructure.config import get_settings
 
 logger = logging.getLogger(__name__)
 

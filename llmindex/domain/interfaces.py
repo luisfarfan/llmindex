@@ -1,28 +1,43 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
-from src.domain.entities import LLMModel
+from llmindex.domain.entities import LLMModel
 
 class IModelRepository(ABC):
     """Port: Interface for LLMModel persistence."""
 
     @abstractmethod
-    async def get_by_id(self, model_id: str) -> Optional[LLMModel]: ...
+    def get_by_id(self, model_id: str) -> Optional[LLMModel]: ...
 
     @abstractmethod
-    async def get_all(
+    def get_all(
         self, 
         provider: Optional[str] = None,
         best_for: Optional[str] = None,
         is_free: bool = False,
         min_intelligence: Optional[float] = None,
-        sort_by: Optional[str] = None
+        sort_by: Optional[str] = None,
+        sort_order: str = "desc",
+        page: int = 1,
+        page_size: int = 20
     ) -> List[LLMModel]: ...
 
     @abstractmethod
-    async def save(self, model: LLMModel) -> None: ...
+    def get_count(
+        self,
+        provider: Optional[str] = None,
+        best_for: Optional[str] = None,
+        is_free: bool = False,
+        min_intelligence: Optional[float] = None
+    ) -> int: ...
 
     @abstractmethod
-    async def save_batch(self, models: List[LLMModel]) -> None: ...
+    def search(self, query: str, limit: int = 10) -> List[LLMModel]: ...
+
+    @abstractmethod
+    def save(self, model: LLMModel) -> None: ...
+
+    @abstractmethod
+    def save_batch(self, models: List[LLMModel]) -> None: ...
 
 class IFetcherGateway(ABC):
     """Port: Interface for fetching data from external APIs."""

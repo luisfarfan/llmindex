@@ -6,10 +6,66 @@ A unified, open-source LLM registry merging **OpenRouter** (catalog) and **Artif
 LLMIndex provides a "Single Source of Truth" for LLM metadata and performance tiers. It uses a **Git-Ops** approach, where the data is updated daily via GitHub Actions and stored in portable **JSON** and **SQLite** formats.
 
 ## Key Features
+- **Library-First**: Consume as a Python dependency in your own projects.
+- **Dual Persistence**: Choose between **SQLite** (for sync/write) and **JSON** (for read-only low-infra apps).
 - **Normalized Registry**: Standardized model IDs across providers.
 - **Computed Metrics**: Intelligence/Cost efficiency scores and performance tiers.
-- **Lite & Portable**: No complex DB setup required.
-- **Ready for Agents**: Designed with "AI-Friendly" documentation (SDD).
+- **Ready for Agents**: Designed with "AI-Friendly" documentation.
+
+## Installation
+
+```bash
+# Basic installation (Library only)
+pip install llmindex
+
+# With API support (FastAPI + Uvicorn)
+pip install "llmindex[api]"
+```
+
+## Library Usage
+
+The `LLMIndex` class is the main entry point for consuming the registry.
+
+### Consume from JSON (No database required)
+If you just want to query the pre-generated registry file:
+
+```python
+import asyncio
+from llmindex import LLMIndex
+
+async def main():
+    # 'llmindex.json' should be in your project root or provide the full path
+    client = LLMIndex(mode="json", path="llmindex.json")
+    
+    models = await client.get_models(best_for="coding", sort_by="price")
+    for m in models:
+        print(f"{m.name}: ${m.pricing.input}/1M tokens")
+
+asyncio.run(main())
+```
+
+### Consume from SQLite
+Use SQLite if you need to run synchronization or prefer a database-backed store:
+
+```python
+from llmindex import LLMIndex
+
+client = LLMIndex(mode="sqlite", path="data/llmindex.sqlite")
+
+# Get counts
+total = await client.get_count(provider="OpenAI")
+
+# Sync registry (Requires OPENROUTER_API_KEY in ENV)
+await client.sync()
+```
+
+## Running the API Server
+
+If you installed with `[api]`, you can run the unified registry server:
+
+```bash
+llmindex  # or uvicorn llmindex.adapters.api.main:app --reload
+```
 
 ## Documentation
 See the [docs/](docs/) folder for detailed specifications:
@@ -17,28 +73,6 @@ See the [docs/](docs/) folder for detailed specifications:
 - [Data Schema](docs/02-data-schema.md)
 - [Matching Engine](docs/03-matching-engine.md)
 - [Classification Logic](docs/05-classification-logic.md)
-
-## Development
-This project follows **Clean Architecture**.
-- **Domain**: Pure business logic (matching, scoring).
-- **Use Cases**: Orchestration of sync and queries.
-- **Adapters**: FastAPI, SQLite, and external API clients.
-
-### Setup
-```bash
-poetry install
-poetry shell
-```
-
-### Run Tests
-```bash
-PYTHONPATH=. pytest tests/
-```
-
-### Start API
-```bash
-uvicorn src.adapters.api.main:app --reload
-```
 
 ---
 *Open Source for the AI Community.*

@@ -59,10 +59,14 @@ class LLMModel(BaseModel):
     @property
     def performance_tier(self) -> str:
         """Categorize models into tiers."""
-        base_score = self.benchmarks.intelligence_score if self.benchmarks else 0
+        base_score = 0
+        if self.benchmarks and self.benchmarks.intelligence_score:
+            base_score = self.benchmarks.intelligence_score
+            
         if base_score > 90: return "frontier"
         if base_score > 70: return "pro"
         return "lite"
+
 
     @computed_field
     @property

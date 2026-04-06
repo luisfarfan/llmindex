@@ -1,8 +1,8 @@
 import logging
 from typing import List, Dict, Any, Optional
-from src.domain.entities import LLMModel, Pricing, Benchmarks
-from src.domain.interfaces import IModelRepository, IFetcherGateway, IStaticExporter
-from src.domain.services.matching_engine import MatchingEngine
+from llmindex.domain.entities import LLMModel, Pricing, Benchmarks
+from llmindex.domain.interfaces import IModelRepository, IFetcherGateway, IStaticExporter
+from llmindex.domain.services.matching_engine import MatchingEngine
 
 logger = logging.getLogger(__name__)
 
@@ -36,13 +36,17 @@ class SyncRegistryUseCase:
             return []
 
         # Build candidate list for the matching engine
-        candidate_ids = []
+        # We index candidates by Slug and Name to allow fuzzy discovery
+        candidates = []
         benchmark_map = {}
         for b in raw_benchmarks:
-            vid = b.get("id") or b.get("slug") or b.get("name")
-            if vid:
-                benchmark_map[vid] = b
-                candidate_ids.append(vid)
+            # High-Fidelity: Index by multiple identifiers
+            for key in ["slug", "name", "id"]:
+                val = b.get(key)
+                if val:
+                    candidates.append(val)
+                    benchmark_map[val] = b
+
 
         final_models: List[LLMModel] = []
 
@@ -69,7 +73,8 @@ class SyncRegistryUseCase:
             # But we could also find MULTIPLE if we wanted to be even deeper.
             # For now, let's just make sure we check multiple keys.
             
-            match_id, _ = self.matching_engine.find_match(model_id, candidate_ids)
+            match_id, score = self.matching_engine.find_match(model_id, candidates)
+            logger.info(f"Target: {model_id} | Match: {match_id} | Score: {score}")
             
             if match_id:
                 aa = benchmark_map[match_id]
@@ -82,10 +87,37 @@ class SyncRegistryUseCase:
                 benchmarks.elo_score = self._get_float(aa, ["quality_score", "elo_rating", "elo"])
                 has_benchmarks = True
 
+            # Improved Provider Extraction
+            provider_raw = item.get("provider", {})
+            provider_name = "Unknown"
+            if isinstance(provider_raw, dict):
+                provider_name = provider_raw.get("name") or "Unknown"
+            
+            if provider_name == "Unknown":
+                model_id = item.get("id", "")
+                if "/" in model_id:
+                    # e.g. "openai/gpt-4" -> "OpenAI"
+                    raw_prefix = model_id.split("/")[0]
+                    # Map common slugs to display names
+                    mapping = {
+                        "openai": "OpenAI",
+                        "anthropic": "Anthropic",
+                        "google": "Google",
+                        "meta": "Meta",
+                        "mistral": "Mistral",
+                        "x-ai": "xAI",
+                        "deepseek": "DeepSeek",
+                        "microsoft": "Microsoft",
+                        "cohere": "Cohere"
+                    }
+                    provider_name = mapping.get(raw_prefix.lower(), raw_prefix.title())
+                elif ":" in item.get("name", ""):
+                    provider_name = item.get("name").split(":")[0].strip()
+
             model = LLMModel(
                 id=model_id,
                 name=item.get("name") or model_id,
-                provider=item.get("provider", {}).get("name") or "Unknown",
+                provider=provider_name,
                 context_length=int(item.get("context_length") or 0),
                 pricing=pricing,
                 modalities=item.get("architecture", {}).get("input_modalities", ["text"]),
@@ -93,10 +125,11 @@ class SyncRegistryUseCase:
             )
             final_models.append(model)
 
+
         if final_models:
-            await self.repository.save_batch(final_models)
+            self.repository.save_batch(final_models)
             if self.exporter:
-                await self.exporter.export(final_models)
+                self.exporter.export(final_models)
             
         return final_models
 
