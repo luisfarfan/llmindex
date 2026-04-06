@@ -18,6 +18,7 @@ It provides a "Single Source of Truth" for model capabilities, pricing, and perf
 - [🧠 Data Intelligence (Providers)](#-data-intelligence-providers)
 - [🕒 Data Freshness & Automation](#-data-freshness--automation-git-ops)
 - [✨ Smart Query Methods](#-smart-query-methods)
+- [🔄 Model Substitution](#-model-substitution)
 - [🧪 Verified Reliability](#-verified-reliability)
 - [🔮 Future Roadmap](#-future-roadmap)
 - [🤝 Contributing](#-contributing)
@@ -35,6 +36,8 @@ Why use this instead of the raw OpenRouter API?
 | **Intelligence Scores** | ❌ No | ✅ Yes (ArtificialAnalysis) |
 | **Performance Tiers** | ❌ No | ✅ Yes (Frontier/Pro/Lite) |
 | **Smart Discovery** | ❌ No | ✅ Yes (`get_smartest`, `get_cheapest`) |
+| **Virtual Filtering** | ❌ No | ✅ Yes (Excludes auto-routers by default) |
+| **Substitution Engine**| ❌ No | ✅ Yes (`get_best_alternative`) |
 | **Fuzzy Search** | ❌ Limited | ✅ Yes (RapidFuzz integrated) |
 | **Sync/Async Facades** | ❌ No | ✅ Yes (Plug & Play) |
 
@@ -67,12 +70,12 @@ async def main():
     # Smart Discovery: Get the smartest model for coding
     models = await client.get_best_for_coding(limit=1)
     if models:
-        print(f"Best model: {models[0].name} (Tier: {models[0].performance_tier})")
+        print(f"Best: {models[0].name} (Score: {models[0].intelligence_score})")
         
-    # Full Fuzzy Search
-    results = await client.search("gpt4-o reasoning")
-    for r in results:
-        print(f"Matched: {r.id}")
+    # NEW: Find the best substitute for GPT-4 within budget
+    alt = await client.get_best_alternative("openai/gpt-4o", max_price=10.0)
+    if alt:
+        print(f"Fallback to: {alt.id}")
 
 asyncio.run(main())
 ```
@@ -118,18 +121,31 @@ OpenRouter Insights is not a static file. We run an **automated 24-hour synchron
 OpenRouter Insights comes with pre-built logic to discover models based on real-world capabilities:
 
 *   `.get_smartest()`: Highest intelligence scores first.
-*   `.get_cheapest()`: Lowest cost-to-output first.
+*   `.get_cheapest()`: Lowest cost-to-output first (excludes virtual routers).
 *   `.get_best_for_coding()`: Top-tier coding performers.
 *   `.get_top_frontier()`: Only the best models in the world.
+*   `.get_by_tier("pro")`: Native DB-level filtering by performance tiers.
 *   `.get_fastest()`: Highest Tokens Per Second (TPS).
 
 ---
 
-## 🧪 Verified Reliability
+## 🔄 Model Substitution
+
+One of the most powerful features is the **Substitution Engine**. It allows you to find valid fallbacks when a model is unavailable or exceeds your budget, ensuring your agents stay operational:
+
+```python
+# Seek the highest performing alternative in the same tier
+fallback = client.get_best_alternative(
+    model_id="anthropic/claude-3.5-sonnet", 
+    max_price=15.0  # Optional cost ceiling
+)
+```
+
+---
 
 We take production stability seriously. Every release is validated against a comprehensive test suite (Unit, Integration, Persistence, and Facade tests).
 
-**Current Status**: 19 tests passed (100% success rate).
+**Current Status**: 61 tests passed (**95% global coverage**).
 
 ---
 
