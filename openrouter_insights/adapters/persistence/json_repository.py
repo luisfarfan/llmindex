@@ -16,10 +16,19 @@ class JSONModelRepository(IModelRepository):
 
     def _load(self) -> List[LLMModel]:
         try:
-            with open(self.file_path, "r") as f:
+            with open(self.file_path, "r", encoding="utf-8") as f:
                 data = json.load(f)
+                
+                # Support for new structured format (v2.0)
+                if isinstance(data, dict) and "models" in data:
+                    data = data["models"]
+                
+                # Check for valid list structure
+                if not isinstance(data, list):
+                    return []
+                    
                 return [LLMModel.model_validate(item) for item in data]
-        except (FileNotFoundError, json.JSONDecodeError):
+        except (FileNotFoundError, json.JSONDecodeError, KeyError):
             return []
 
     def get_all(

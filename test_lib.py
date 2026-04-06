@@ -1,5 +1,6 @@
 import asyncio
 import os
+import pytest
 from openrouter_insights import LLMIndex, LLMIndexSync
 
 def test_sync_mode():
@@ -22,6 +23,7 @@ def test_sync_mode():
     results = client.search("gpt-4o", limit=1)
     print(f"Search 'gpt-4o': {results[0].id if results else 'None'}")
 
+@pytest.mark.asyncio
 async def test_async_mode():
     print("\n--- Testing Async Mode (With await) ---")
     client = LLMIndex(mode="json", path="openrouter_insights.json")
