@@ -1,6 +1,17 @@
 # CHANGELOG
 
 
+## v0.5.1 (2026-04-06)
+
+### Bug Fixes
+
+* fix: update JSON loader for v2.0 format and fix async test decoration ([`15a027b`](https://github.com/luisfarfan/openrouter-insights/commit/15a027b5704344c50df051e81c438a3c918786ad))
+
+### Documentation
+
+* docs: upgrade README with TOC, roadmap and intelligence providers ([`b4212fe`](https://github.com/luisfarfan/openrouter-insights/commit/b4212fe9af6150b92d7dffe0124963e237ac1449))
+
+
 ## v0.5.0 (2026-04-06)
 
 ### Chores
