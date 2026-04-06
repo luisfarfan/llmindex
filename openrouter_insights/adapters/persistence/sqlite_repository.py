@@ -1,7 +1,7 @@
 import json
 from typing import List, Optional
 from sqlalchemy import desc, asc
-from sqlmodel import SQLModel, Field, Session, create_engine
+from sqlmodel import SQLModel, Field, Session, create_engine, select, func, or_
 from rapidfuzz import process, fuzz
 from openrouter_insights.domain.entities import LLMModel, Pricing, Benchmarks
 from openrouter_insights.domain.interfaces import IModelRepository
@@ -87,22 +87,22 @@ class SQLiteModelRepository(IModelRepository):
         page_size: int = 20
     ) -> List[LLMModel]:
         with Session(self.engine) as session:
-            query = session.query(LLMModelORM)
-            query = self._apply_filters(query, provider, best_for, is_free, min_intelligence, filter_virtual)
+            statement = select(LLMModelORM)
+            statement = self._apply_filters(statement, provider, best_for, is_free, min_intelligence, filter_virtual)
 
             direction = desc if sort_order == "desc" else asc
             if sort_by == "price":
-                query = query.order_by(direction(LLMModelORM.pricing_input + LLMModelORM.pricing_output))
+                statement = statement.order_by(direction(LLMModelORM.pricing_input + LLMModelORM.pricing_output))
             elif sort_by == "intelligence":
-                query = query.order_by(direction(LLMModelORM.intelligence_score))
+                statement = statement.order_by(direction(LLMModelORM.intelligence_score))
             elif sort_by == "speed":
-                query = query.order_by(direction(LLMModelORM.speed_score))
+                statement = statement.order_by(direction(LLMModelORM.speed_score))
             elif sort_by == "elo":
-                query = query.order_by(direction(LLMModelORM.elo_score))
+                statement = statement.order_by(direction(LLMModelORM.elo_score))
 
             offset = (page - 1) * page_size
-            query = query.offset(offset).limit(page_size)
-            return [self._to_entity(r) for r in query.all()]
+            statement = statement.offset(offset).limit(page_size)
+            return [self._to_entity(r) for r in session.exec(statement).all()]
 
     def get_count(
         self,
@@ -113,9 +113,9 @@ class SQLiteModelRepository(IModelRepository):
         filter_virtual: bool = True
     ) -> int:
         with Session(self.engine) as session:
-            query = session.query(LLMModelORM)
-            query = self._apply_filters(query, provider, best_for, is_free, min_intelligence, filter_virtual)
-            return query.count()
+            statement = select(LLMModelORM)
+            statement = self._apply_filters(statement, provider, best_for, is_free, min_intelligence, filter_virtual)
+            return session.exec(statement.with_only_columns(func.count())).one()
 
     def get_by_id(self, model_id: str) -> Optional[LLMModel]:
         with Session(self.engine) as session:
@@ -128,31 +128,35 @@ class SQLiteModelRepository(IModelRepository):
             return None
         
         with Session(self.engine) as session:
-            query = session.query(LLMModelORM).filter(LLMModelORM.id != model_id)
-            query = query.filter(~LLMModelORM.is_virtual)
+            statement = select(LLMModelORM).where(LLMModelORM.id != model_id)
+            statement = statement.where(LLMModelORM.is_virtual.is_(False))
             
             # Try same tier (highly recommended)
-            tier = source.performance_tier
-            query = query.filter(LLMModelORM.best_for.like(f'%"{tier}"%'))
+            tier = getattr(source, 'performance_tier', None)
+            if tier:
+                statement = statement.where(LLMModelORM.best_for.contains(f'"{tier}"'))
             
             if max_price is not None:
-                query = query.filter((LLMModelORM.pricing_input + LLMModelORM.pricing_output) <= max_price)
+                statement = statement.where((LLMModelORM.pricing_input + LLMModelORM.pricing_output) <= max_price)
             
             # Sort by intelligence
-            query = query.order_by(desc(LLMModelORM.intelligence_score))
+            statement = statement.order_by(desc(LLMModelORM.intelligence_score))
             
-            best = query.first()
+            best = session.exec(statement).first()
             return self._to_entity(best) if best else None
 
     def search(self, query: str, limit: int = 10) -> List[LLMModel]:
         """Hybrid search: SQL filter + Fuzzy ranking."""
         with Session(self.engine) as session:
             # Fetch candidates using SQL LIKE for efficiency
-            candidates = session.query(LLMModelORM).filter(
-                (LLMModelORM.name.like(f"%{query}%")) | 
-                (LLMModelORM.provider.like(f"%{query}%")) |
-                (LLMModelORM.id.like(f"%{query}%"))
-            ).limit(100).all()
+            statement = select(LLMModelORM).where(
+                or_(
+                    LLMModelORM.name.contains(query),
+                    LLMModelORM.provider.contains(query),
+                    LLMModelORM.id.contains(query)
+                )
+            ).limit(100)
+            candidates = session.exec(statement).all()
             
             if not candidates:
                 return []
@@ -162,19 +166,20 @@ class SQLiteModelRepository(IModelRepository):
             results = process.extract(query, model_names, scorer=fuzz.WRatio, limit=limit)
             return [models[res[2]] for res in results]
 
-    def _apply_filters(self, query, provider, best_for, is_free, min_intelligence, filter_virtual):
+    def _apply_filters(self, statement, provider, best_for, is_free, min_intelligence, filter_virtual):
         if provider:
-            query = query.filter(LLMModelORM.provider == provider)
+            statement = statement.where(LLMModelORM.provider == provider)
         if is_free:
-            query = query.filter(LLMModelORM.pricing_input == 0)
+            statement = statement.where(LLMModelORM.pricing_input == 0)
         if min_intelligence:
-            query = query.filter(LLMModelORM.intelligence_score >= min_intelligence)
+            statement = statement.where(LLMModelORM.intelligence_score >= min_intelligence)
         if best_for:
-            query = query.filter(LLMModelORM.best_for.like(f'%"{best_for}"%'))
+            # For JSON-string tags like "['pro', 'coding']"
+            statement = statement.where(LLMModelORM.best_for.contains(f'"{best_for}"'))
         if filter_virtual:
-            query = query.filter(~LLMModelORM.is_virtual)
-            query = query.filter(LLMModelORM.pricing_input >= 0)
-        return query
+            statement = statement.where(LLMModelORM.is_virtual.is_(False))
+            statement = statement.where(LLMModelORM.pricing_input >= 0)
+        return statement
 
     def _to_entity(self, orm: LLMModelORM) -> LLMModel:
         benchmarks = Benchmarks(

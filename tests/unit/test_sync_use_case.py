@@ -3,16 +3,17 @@ from aioresponses import aioresponses
 from openrouter_insights.use_cases.sync_registry import SyncRegistryUseCase
 from openrouter_insights.adapters.gateways.openrouter_fetcher import OpenRouterFetcher
 from openrouter_insights.adapters.gateways.artificial_analysis_fetcher import ArtificialAnalysisFetcher
-from openrouter_insights.adapters.persistence.json_exporter import JSONExporter
-from openrouter_insights.adapters.persistence.sqlite_repository import SQLiteModelRepository
 from openrouter_insights.domain.services.matching_engine import MatchingEngine
 from unittest.mock import MagicMock
 
 @pytest.fixture
-def sync_use_case():
+def sync_use_case(monkeypatch):
+    # Ensure AA API key is set for tests
+    monkeypatch.setenv("ARTIFICIAL_ANALYSIS_API_KEY", "test-key")
+    
     # Mocking repositories and exporters
-    repository = MagicMock(spec=SQLiteModelRepository)
-    exporter = MagicMock(spec=JSONExporter)
+    repository = MagicMock()
+    exporter = MagicMock()
     
     # We use real fetchers but mock their HTTP responses via aioresponses
     return SyncRegistryUseCase(
@@ -83,7 +84,7 @@ async def test_sync_registry_invalid_benchmark_float(sync_use_case):
 
         result = await sync_use_case.execute()
         assert result[0].id == "m1"
-        assert result[0].benchmarks.elo_score is None # Failed to parse "N/A"
+        assert result[0].benchmarks is None # Fully failed to parse invalid scores
 
 @pytest.mark.asyncio
 async def test_sync_registry_fetch_failure(sync_use_case):

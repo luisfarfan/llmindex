@@ -52,7 +52,8 @@ class SyncRegistryUseCase:
 
         for item in raw_catalogs:
             model_id = item.get("id")
-            if not model_id: continue
+            if not model_id:
+                continue
 
             # MULTI-MATCH LOGIC: Try to find multiple sources for this OR model
             # We iterate through the whole candidate list to find ANY good match
@@ -85,7 +86,15 @@ class SyncRegistryUseCase:
                 benchmarks.reasoning_score = self._get_float(evals, ["artificial_analysis_reasoning_index", "reasoning"])
                 benchmarks.coding_score = self._get_float(evals, ["artificial_analysis_coding_index", "coding"])
                 benchmarks.elo_score = self._get_float(aa, ["quality_score", "elo_rating", "elo"])
-                has_benchmarks = True
+                
+                # Only mark as having benchmarks if at least one metric is valid
+                has_benchmarks = any([
+                    benchmarks.intelligence_score is not None,
+                    benchmarks.speed_score is not None,
+                    benchmarks.reasoning_score is not None,
+                    benchmarks.coding_score is not None,
+                    benchmarks.elo_score is not None
+                ])
 
             # Improved Provider Extraction
             provider_raw = item.get("provider", {})
@@ -137,6 +146,8 @@ class SyncRegistryUseCase:
         for key in keys:
             val = data.get(key)
             if val is not None:
-                try: return float(val)
-                except: continue
+                try:
+                    return float(val)
+                except (ValueError, TypeError):
+                    continue
         return None
