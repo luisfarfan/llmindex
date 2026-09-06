@@ -1,18 +1,18 @@
 {
   "metadata": {
     "format_version": "1.0",
-    "generated_at": "2026-09-05T00:09:03.755662+00:00"
+    "generated_at": "2026-09-06T00:08:03.881716+00:00"
   },
   "prices": [
     {
       "currency": "USD",
-      "metric_type": "seconds",
+      "metric_type": "units",
       "model": "alibaba/happy-horse/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "alibaba/happy-horse/image-to-video",
-        "unit": "seconds",
+        "unit": "units",
         "unit_price": 0.14
       },
       "unit_price": "0.14"
@@ -84,13 +84,13 @@
     },
     {
       "currency": "USD",
-      "metric_type": "seconds",
+      "metric_type": "units",
       "model": "alibaba/happy-horse/video-edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "alibaba/happy-horse/video-edit",
-        "unit": "seconds",
+        "unit": "units",
         "unit_price": 0.14
       },
       "unit_price": "0.14"
@@ -110,29 +110,29 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "alibaba/qwen-image-3/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "alibaba/qwen-image-3/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "alibaba/qwen-image-3/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "alibaba/qwen-image-3/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -175,81 +175,81 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "alibaba/wan-3.0/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "alibaba/wan-3.0/image-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "alibaba/wan-3.0/reference-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "alibaba/wan-3.0/reference-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "alibaba/wan-3.0/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "alibaba/wan-3.0/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "input seconds",
       "model": "argil/avatars/audio-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "argil/avatars/audio-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "input seconds",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "input seconds",
       "model": "argil/avatars/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "argil/avatars/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "input seconds",
+        "unit_price": 0.0225
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.0225"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "1000 characters",
       "model": "async/tts-pro/v1.0",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "async/tts-pro/v1.0",
-        "unit": "compute seconds",
-        "unit_price": 0.0008
+        "unit": "1000 characters",
+        "unit_price": 0.01
       },
-      "unit_price": "0.0008"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -396,16 +396,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "units",
+      "metric_type": "seconds",
       "model": "blackforestlabs/flux-video-upscale",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "blackforestlabs/flux-video-upscale",
-        "unit": "units",
-        "unit_price": 0.0714
+        "unit": "seconds",
+        "unit_price": 0.075
       },
-      "unit_price": "0.0714"
+      "unit_price": "0.075"
     },
     {
       "currency": "USD",
@@ -799,42 +799,42 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "bria/video/background-removal/green-screen-despill",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/video/background-removal/green-screen-despill",
-        "unit": "compute seconds",
-        "unit_price": 3e-05
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00003"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "bria/video/background-removal/realtime",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/video/background-removal/realtime",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.0042
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.0042"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "bria/video/background-removal/v3",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bria/video/background-removal/v3",
-        "unit": "compute seconds",
-        "unit_price": 3e-05
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00003"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
@@ -916,52 +916,52 @@
     },
     {
       "currency": "USD",
-      "metric_type": "units",
+      "metric_type": "1000 tokens",
       "model": "bytedance/seedance-2.0/fast/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bytedance/seedance-2.0/fast/image-to-video",
-        "unit": "units",
+        "unit": "1000 tokens",
         "unit_price": 0.0112
       },
       "unit_price": "0.0112"
     },
     {
       "currency": "USD",
-      "metric_type": "units",
+      "metric_type": "1000 tokens",
       "model": "bytedance/seedance-2.0/fast/reference-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bytedance/seedance-2.0/fast/reference-to-video",
-        "unit": "units",
+        "unit": "1000 tokens",
         "unit_price": 0.0112
       },
       "unit_price": "0.0112"
     },
     {
       "currency": "USD",
-      "metric_type": "units",
+      "metric_type": "1000 tokens",
       "model": "bytedance/seedance-2.0/fast/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bytedance/seedance-2.0/fast/text-to-video",
-        "unit": "units",
+        "unit": "1000 tokens",
         "unit_price": 0.0112
       },
       "unit_price": "0.0112"
     },
     {
       "currency": "USD",
-      "metric_type": "units",
+      "metric_type": "1000 tokens",
       "model": "bytedance/seedance-2.0/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bytedance/seedance-2.0/image-to-video",
-        "unit": "units",
+        "unit": "1000 tokens",
         "unit_price": 0.014
       },
       "unit_price": "0.014"
@@ -1007,26 +1007,26 @@
     },
     {
       "currency": "USD",
-      "metric_type": "units",
+      "metric_type": "1000 tokens",
       "model": "bytedance/seedance-2.0/reference-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bytedance/seedance-2.0/reference-to-video",
-        "unit": "units",
+        "unit": "1000 tokens",
         "unit_price": 0.014
       },
       "unit_price": "0.014"
     },
     {
       "currency": "USD",
-      "metric_type": "units",
+      "metric_type": "1000 tokens",
       "model": "bytedance/seedance-2.0/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bytedance/seedance-2.0/text-to-video",
-        "unit": "units",
+        "unit": "1000 tokens",
         "unit_price": 0.014
       },
       "unit_price": "0.014"
@@ -1111,16 +1111,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "bytedance/seedream/v5/pro/layerize",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "bytedance/seedream/v5/pro/layerize",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "images",
+        "unit_price": 0.03375
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.03375"
     },
     {
       "currency": "USD",
@@ -1137,42 +1137,42 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "minutes",
       "model": "cassetteai/music-generator",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "cassetteai/music-generator",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "minutes",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "generations",
       "model": "cassetteai/sound-effects-generator",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "cassetteai/sound-effects-generator",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "generations",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "minutes",
       "model": "cassetteai/video-sound-effects-generator",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "cassetteai/video-sound-effects-generator",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "minutes",
+        "unit_price": 0.2
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.2"
     },
     {
       "currency": "USD",
@@ -1514,55 +1514,55 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "fal-ai/bernini-r/edit-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/bernini-r/edit-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.08
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.08"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "fal-ai/bernini-r/reference-edit-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/bernini-r/reference-edit-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.08
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.08"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "fal-ai/bernini-r/reference-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/bernini-r/reference-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.08
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.08"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "fal-ai/bernini-r/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/bernini-r/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.08
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.08"
     },
     {
       "currency": "USD",
@@ -3575,9 +3575,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-1/dev/image-to-image",
         "unit": "megapixels",
-        "unit_price": 0.03
+        "unit_price": 0.025
       },
-      "unit_price": "0.03"
+      "unit_price": "0.025"
     },
     {
       "currency": "USD",
@@ -3653,9 +3653,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-1/schnell/redux",
         "unit": "megapixels",
-        "unit_price": 0.025
+        "unit_price": 0.003
       },
-      "unit_price": "0.025"
+      "unit_price": "0.003"
     },
     {
       "currency": "USD",
@@ -3685,16 +3685,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-2",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.012
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.012"
     },
     {
       "currency": "USD",
@@ -4010,42 +4010,42 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "processed megapixels",
       "model": "fal-ai/flux-2/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "processed megapixels",
+        "unit_price": 0.012
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.012"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-2/flash",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/flash",
-        "unit": "compute seconds",
-        "unit_price": 0.0008
+        "unit": "megapixels",
+        "unit_price": 0.005
       },
-      "unit_price": "0.0008"
+      "unit_price": "0.005"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "processed megapixels",
       "model": "fal-ai/flux-2/flash/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/flash/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.0008
+        "unit": "processed megapixels",
+        "unit_price": 0.005
       },
-      "unit_price": "0.0008"
+      "unit_price": "0.005"
     },
     {
       "currency": "USD",
@@ -4056,35 +4056,35 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/4b",
         "unit": "megapixels",
+        "unit_price": 0.005
+      },
+      "unit_price": "0.005"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/flux-2/klein/4b/base",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/flux-2/klein/4b/base",
+        "unit": "megapixels",
         "unit_price": 0.009
       },
       "unit_price": "0.009"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/flux-2/klein/4b/base",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux-2/klein/4b/base",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-2/klein/4b/base/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/4b/base/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.009
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.009"
     },
     {
       "currency": "USD",
@@ -4121,35 +4121,35 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/4b/edit",
         "unit": "megapixels",
-        "unit_price": 0.009
+        "unit_price": 0.01
       },
-      "unit_price": "0.009"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-2/klein/4b/edit/lora",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/4b/edit/lora",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-2/klein/4b/lora",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/4b/lora",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -4160,35 +4160,35 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/9b",
         "unit": "megapixels",
+        "unit_price": 0.006
+      },
+      "unit_price": "0.006"
+    },
+    {
+      "currency": "USD",
+      "metric_type": "megapixels",
+      "model": "fal-ai/flux-2/klein/9b/base",
+      "provider": "fal",
+      "raw": {
+        "currency": "USD",
+        "endpoint_id": "fal-ai/flux-2/klein/9b/base",
+        "unit": "megapixels",
         "unit_price": 0.011
       },
       "unit_price": "0.011"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
-      "model": "fal-ai/flux-2/klein/9b/base",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "fal-ai/flux-2/klein/9b/base",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
-      },
-      "unit_price": "0.00125"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-2/klein/9b/base/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/9b/base/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.011
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.011"
     },
     {
       "currency": "USD",
@@ -4238,22 +4238,22 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/9b/edit/lora",
         "unit": "megapixels",
-        "unit_price": 0.02
+        "unit_price": 0.015
       },
-      "unit_price": "0.02"
+      "unit_price": "0.015"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-2/klein/9b/lora",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/klein/9b/lora",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.015
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.015"
     },
     {
       "currency": "USD",
@@ -4309,16 +4309,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "processed megapixels",
       "model": "fal-ai/flux-2/turbo/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-2/turbo/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.0008
+        "unit": "processed megapixels",
+        "unit_price": 0.008
       },
-      "unit_price": "0.0008"
+      "unit_price": "0.008"
     },
     {
       "currency": "USD",
@@ -4491,16 +4491,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/flux-kontext/dev",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/flux-kontext/dev",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.025
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.025"
     },
     {
       "currency": "USD",
@@ -5590,9 +5590,9 @@
         "currency": "USD",
         "endpoint_id": "fal-ai/hidream-o1-image/dev/edit",
         "unit": "megapixels",
-        "unit_price": 0.01
+        "unit_price": 0.005
       },
-      "unit_price": "0.01"
+      "unit_price": "0.005"
     },
     {
       "currency": "USD",
@@ -5635,16 +5635,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "fal-ai/hunyuan-3d/v3.1/pro/text-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/hunyuan-3d/v3.1/pro/text-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "units",
+        "unit_price": 0.015
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.015"
     },
     {
       "currency": "USD",
@@ -5700,16 +5700,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/hunyuan-image/v3/instruct/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/hunyuan-image/v3/instruct/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.09
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.09"
     },
     {
       "currency": "USD",
@@ -11914,29 +11914,29 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/patina/material",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/patina/material",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "megapixels",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "fal-ai/patina/material/extract",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/patina/material/extract",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "megapixels",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -11953,13 +11953,13 @@
     },
     {
       "currency": "USD",
-      "metric_type": "units",
+      "metric_type": "compute seconds",
       "model": "fal-ai/personaplex/realtime",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/personaplex/realtime",
-        "unit": "units",
+        "unit": "compute seconds",
         "unit_price": 0.001
       },
       "unit_price": "0.001"
@@ -15827,16 +15827,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "videos",
       "model": "fal-ai/wan-flf2v",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/wan-flf2v",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "videos",
+        "unit_price": 0.4
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.4"
     },
     {
       "currency": "USD",
@@ -15866,16 +15866,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "fal-ai/wan-motion",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/wan-motion",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.06
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.06"
     },
     {
       "currency": "USD",
@@ -16347,29 +16347,29 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "fal-ai/wan/v2.7/pro/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/wan/v2.7/pro/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "images",
+        "unit_price": 0.075
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.075"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "fal-ai/wan/v2.7/pro/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "fal-ai/wan/v2.7/pro/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "images",
+        "unit_price": 0.075
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.075"
     },
     {
       "currency": "USD",
@@ -16828,55 +16828,55 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "google/gemini-omni-flash/v1.1/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "google/gemini-omni-flash/v1.1/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "google/gemini-omni-flash/v1.1/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "google/gemini-omni-flash/v1.1/image-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "google/gemini-omni-flash/v1.1/reference-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "google/gemini-omni-flash/v1.1/reference-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "google/gemini-omni-flash/v1.1/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "google/gemini-omni-flash/v1.1/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
@@ -16932,107 +16932,107 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "hitem3d/hi3d/image-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "hitem3d/hi3d/image-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "hitem3d/hi3d/image-to-relief",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "hitem3d/hi3d/image-to-relief",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "hitem3d/hi3d/multi-view-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "hitem3d/hi3d/multi-view-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "hitem3d/hi3d/multicolor",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "hitem3d/hi3d/multicolor",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "hitem3d/hi3d/split",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "hitem3d/hi3d/split",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "hitem3d/hi3d/texture",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "hitem3d/hi3d/texture",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "hitem3d/hi3d/v3.0/image-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "hitem3d/hi3d/v3.0/image-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "hitem3d/hi3d/v3.0/multi-view-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "hitem3d/hi3d/v3.0/multi-view-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
@@ -17056,48 +17056,48 @@
         "currency": "USD",
         "endpoint_id": "ideogram/v4/fast",
         "unit": "units",
-        "unit_price": 0.01
+        "unit_price": 0.007
       },
-      "unit_price": "0.01"
+      "unit_price": "0.007"
     },
     {
       "currency": "USD",
-      "metric_type": "images",
+      "metric_type": "units",
       "model": "ideogram/v4/image-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "ideogram/v4/image-to-image",
-        "unit": "images",
+        "unit": "units",
         "unit_price": 0.01
       },
       "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "images",
+      "metric_type": "units",
       "model": "ideogram/v4/image-to-image/lora",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "ideogram/v4/image-to-image/lora",
-        "unit": "images",
+        "unit": "units",
         "unit_price": 0.015
       },
       "unit_price": "0.015"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "ideogram/v4/instant",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "ideogram/v4/instant",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "units",
+        "unit_price": 0.005
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.005"
     },
     {
       "currency": "USD",
@@ -17108,9 +17108,9 @@
         "currency": "USD",
         "endpoint_id": "ideogram/v4/lora",
         "unit": "units",
-        "unit_price": 0.01
+        "unit_price": 0.015
       },
-      "unit_price": "0.01"
+      "unit_price": "0.015"
     },
     {
       "currency": "USD",
@@ -17153,55 +17153,55 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "imagineart/imagineart-1.5-preview/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "imagineart/imagineart-1.5-preview/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "images",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "imagineart/imagineart-1.5-pro-preview/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "imagineart/imagineart-1.5-pro-preview/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "images",
+        "unit_price": 0.045
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.045"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "imagineart/imagineart-2.0-edit-preview/image-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "imagineart/imagineart-2.0-edit-preview/image-to-image",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "images",
+        "unit_price": 0.001
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.001"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "imagineart/imagineart-2.0-preview/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "imagineart/imagineart-2.0-preview/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "units",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
@@ -17244,133 +17244,133 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "lightricks/ltx-2.5/audio-to-video/fast",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "lightricks/ltx-2.5/audio-to-video/fast",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "lightricks/ltx-2.5/audio-to-video/pro",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "lightricks/ltx-2.5/audio-to-video/pro",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "lightricks/ltx-2.5/image-to-video/fast",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "lightricks/ltx-2.5/image-to-video/fast",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "lightricks/ltx-2.5/image-to-video/pro",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "lightricks/ltx-2.5/image-to-video/pro",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "lightricks/ltx-2.5/text-to-video/fast",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "lightricks/ltx-2.5/text-to-video/fast",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "lightricks/ltx-2.5/text-to-video/pro",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "lightricks/ltx-2.5/text-to-video/pro",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "5 seconds",
+      "metric_type": "seconds",
       "model": "luma/agent/ray/v3.2/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "luma/agent/ray/v3.2/image-to-video",
-        "unit": "5 seconds",
-        "unit_price": 0.5
+        "unit": "seconds",
+        "unit_price": 0.03
       },
-      "unit_price": "0.5"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "luma/agent/ray/v3.2/reframe",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "luma/agent/ray/v3.2/reframe",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
-      "metric_type": "5 seconds",
+      "metric_type": "seconds",
       "model": "luma/agent/ray/v3.2/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "luma/agent/ray/v3.2/text-to-video",
-        "unit": "5 seconds",
-        "unit_price": 0.5
+        "unit": "seconds",
+        "unit_price": 0.03
       },
-      "unit_price": "0.5"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "luma/agent/ray/v3.2/video-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "luma/agent/ray/v3.2/video-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
@@ -17426,81 +17426,81 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "generations",
       "model": "meshy/v7/image-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "meshy/v7/image-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "generations",
+        "unit_price": 0.8
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.8"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "generations",
       "model": "meshy/v7/multi-image-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "meshy/v7/multi-image-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "generations",
+        "unit_price": 0.8
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.8"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "generations",
       "model": "meshy/v7/text-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "meshy/v7/text-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "generations",
+        "unit_price": 0.8
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.8"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "meta/muse-image/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "meta/muse-image/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "images",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "meta/muse-image/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "meta/muse-image/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "images",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "microsoft/mai-image-2.5",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "microsoft/mai-image-2.5",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 1
       },
-      "unit_price": "0.00007"
+      "unit_price": "1"
     },
     {
       "currency": "USD",
@@ -17543,68 +17543,68 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3-max-turbo/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3-max-turbo/image-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.00625
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.00625"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3-max-turbo/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3-max-turbo/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.00625
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.00625"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3-max/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3-max/image-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.0125
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.0125"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3-max/reference-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3-max/reference-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3-max/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3-max/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.0125
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.0125"
     },
     {
       "currency": "USD",
@@ -17634,29 +17634,29 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3/image-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3/image-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3/image-to-video/lora",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3/image-to-video/lora",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.0625
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.0625"
     },
     {
       "currency": "USD",
@@ -17673,29 +17673,29 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3/reference-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3/reference-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3/reference-to-video/lora",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3/reference-to-video/lora",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.0625
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.0625"
     },
     {
       "currency": "USD",
@@ -17712,42 +17712,42 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.05
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.05"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/h3/text-to-video/lora",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/h3/text-to-video/lora",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.0625
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.0625"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "minimax/music-3",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "minimax/music-3",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.002
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.002"
     },
     {
       "currency": "USD",
@@ -17777,107 +17777,107 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "mirelo-ai/sfx-v1.5/video-to-audio",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "mirelo-ai/sfx-v1.5/video-to-audio",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "mirelo-ai/sfx-v1.5/video-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "mirelo-ai/sfx-v1.5/video-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "mirelo-ai/sfx-v1/video-to-audio",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "mirelo-ai/sfx-v1/video-to-audio",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.007
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.007"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "mirelo-ai/sfx-v1/video-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "mirelo-ai/sfx-v1/video-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.007
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.007"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "mirelo-ai/sfx1.6/extend-audio",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "mirelo-ai/sfx1.6/extend-audio",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "mirelo-ai/sfx1.6/inpaint-audio",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "mirelo-ai/sfx1.6/inpaint-audio",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "mirelo-ai/sfx1.6/text-to-audio",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "mirelo-ai/sfx1.6/text-to-audio",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "mirelo-ai/sfx1.6/video-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "mirelo-ai/sfx1.6/video-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -18011,16 +18011,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "minutes",
       "model": "nvidia/nemotron-asr-multilingual/asr",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "nvidia/nemotron-asr-multilingual/asr",
-        "unit": "compute seconds",
-        "unit_price": 0.00111
+        "unit": "minutes",
+        "unit_price": 0.008
       },
-      "unit_price": "0.00111"
+      "unit_price": "0.008"
     },
     {
       "currency": "USD",
@@ -18193,42 +18193,42 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "pixelcut/background-removal",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "pixelcut/background-removal",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "images",
+        "unit_price": 0.016
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.016"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "pixelcut/product-photo",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "pixelcut/product-photo",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "images",
+        "unit_price": 0.024
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.024"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "30 frames",
       "model": "pixelcut/video-background-removal",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "pixelcut/video-background-removal",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "30 frames",
+        "unit_price": 0.022
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.022"
     },
     {
       "currency": "USD",
@@ -18310,159 +18310,120 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "minutes",
       "model": "resemble-ai/chatterboxhd/speech-to-speech",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "resemble-ai/chatterboxhd/speech-to-speech",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "minutes",
+        "unit_price": 0.02
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.02"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "1000 characters",
       "model": "resemble-ai/chatterboxhd/text-to-speech",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "resemble-ai/chatterboxhd/text-to-speech",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "1000 characters",
+        "unit_price": 0.04
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.04"
     },
     {
       "currency": "USD",
-      "metric_type": "images",
-      "model": "reve/2.1/edit",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "reve/2.1/edit",
-        "unit": "images",
-        "unit_price": 0.25
-      },
-      "unit_price": "0.25"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "images",
-      "model": "reve/2.1/remix",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "reve/2.1/remix",
-        "unit": "images",
-        "unit_price": 0.25
-      },
-      "unit_price": "0.25"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "images",
-      "model": "reve/2.1/text-to-image",
-      "provider": "fal",
-      "raw": {
-        "currency": "USD",
-        "endpoint_id": "reve/2.1/text-to-image",
-        "unit": "images",
-        "unit_price": 0.25
-      },
-      "unit_price": "0.25"
-    },
-    {
-      "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "rundiffusion-fal/juggernaut-flux-lora",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "rundiffusion-fal/juggernaut-flux-lora",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.045
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.045"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "rundiffusion-fal/juggernaut-flux-lora/inpainting",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "rundiffusion-fal/juggernaut-flux-lora/inpainting",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.045
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.045"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "rundiffusion-fal/juggernaut-flux/base",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "rundiffusion-fal/juggernaut-flux/base",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.035
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.035"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "rundiffusion-fal/juggernaut-flux/base/image-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "rundiffusion-fal/juggernaut-flux/base/image-to-image",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.035
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.035"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "rundiffusion-fal/juggernaut-flux/lightning",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "rundiffusion-fal/juggernaut-flux/lightning",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.006
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.006"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "rundiffusion-fal/juggernaut-flux/pro",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "rundiffusion-fal/juggernaut-flux/pro",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.055
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.055"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "megapixels",
       "model": "rundiffusion-fal/juggernaut-flux/pro/image-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "rundiffusion-fal/juggernaut-flux/pro/image-to-image",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "megapixels",
+        "unit_price": 0.055
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.055"
     },
     {
       "currency": "USD",
@@ -18505,16 +18466,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "sonilo/v1.1/text-to-sound-effects",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "sonilo/v1.1/text-to-sound-effects",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.0018
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.0018"
     },
     {
       "currency": "USD",
@@ -18531,16 +18492,16 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "sonilo/v1.1/video-to-sound-effects",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "sonilo/v1.1/video-to-sound-effects",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.009
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.009"
     },
     {
       "currency": "USD",
@@ -18557,29 +18518,29 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "sonilo/v1.1/video-to-video-sound-effects",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "sonilo/v1.1/video-to-video-sound-effects",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "seconds",
+        "unit_price": 0.009
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.009"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "topaz/adjust/image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "topaz/adjust/image",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -18843,55 +18804,55 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "tripo3d/tripo/remesh",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "tripo3d/tripo/remesh",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "tripo3d/tripo/segment",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "tripo3d/tripo/segment",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "tripo3d/tripo/v2.5/image-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "tripo3d/tripo/v2.5/image-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "credits",
       "model": "tripo3d/tripo/v2.5/multiview-to-3d",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "tripo3d/tripo/v2.5/multiview-to-3d",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "credits",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -18908,159 +18869,159 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "minutes",
       "model": "veed/avatars/audio-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/avatars/audio-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.000575
+        "unit": "minutes",
+        "unit_price": 0.3
       },
-      "unit_price": "0.000575"
+      "unit_price": "0.3"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "minutes",
       "model": "veed/avatars/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/avatars/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.000575
+        "unit": "minutes",
+        "unit_price": 0.35
       },
-      "unit_price": "0.000575"
+      "unit_price": "0.35"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "veed/fabric-1.0",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/fabric-1.0",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.08
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.08"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "veed/fabric-1.0/fast",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/fabric-1.0/fast",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.1
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.1"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "veed/fabric-1.0/text",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/fabric-1.0/text",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.08
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.08"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "minutes",
       "model": "veed/lipsync",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/lipsync",
-        "unit": "compute seconds",
-        "unit_price": 0.000575
+        "unit": "minutes",
+        "unit_price": 0.4
       },
-      "unit_price": "0.000575"
+      "unit_price": "0.4"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "veed/lipsync/v2",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/lipsync/v2",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "units",
+        "unit_price": 0.07
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.07"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "veed/subtitles",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/subtitles",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "units",
+        "unit_price": 0.1
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.1"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "30 frames",
       "model": "veed/video-background-removal",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/video-background-removal",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "30 frames",
+        "unit_price": 0.015
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.015"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "30 frames",
       "model": "veed/video-background-removal/fast",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/video-background-removal/fast",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "30 frames",
+        "unit_price": 0.008
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.008"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "30 frames",
       "model": "veed/video-background-removal/green-screen",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "veed/video-background-removal/green-screen",
-        "unit": "compute seconds",
-        "unit_price": 0.00125
+        "unit": "30 frames",
+        "unit_price": 0.025
       },
-      "unit_price": "0.00125"
+      "unit_price": "0.025"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "wan/v2.6/image-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "wan/v2.6/image-to-image",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "images",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
@@ -19103,29 +19064,29 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "wan/v2.6/reference-to-video/flash",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "wan/v2.6/reference-to-video/flash",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "units",
+        "unit_price": 0.1
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.1"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "images",
       "model": "wan/v2.6/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "wan/v2.6/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "images",
+        "unit_price": 0.03
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.03"
     },
     {
       "currency": "USD",
@@ -19168,55 +19129,55 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "xai/grok-imagine-image/quality/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "xai/grok-imagine-image/quality/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "xai/grok-imagine-image/quality/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "xai/grok-imagine-image/quality/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "xai/grok-imagine-image/v2.0/edit",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "xai/grok-imagine-image/v2.0/edit",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "units",
       "model": "xai/grok-imagine-image/v2.0/text-to-image",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "xai/grok-imagine-image/v2.0/text-to-image",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "units",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
@@ -19298,42 +19259,42 @@
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "xai/grok-imagine-video/v1.5/reference-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "xai/grok-imagine-video/v1.5/reference-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "seconds",
       "model": "xai/grok-imagine-video/v1.5/text-to-video",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "xai/grok-imagine-video/v1.5/text-to-video",
-        "unit": "compute seconds",
-        "unit_price": 0.00017
+        "unit": "seconds",
+        "unit_price": 0.01
       },
-      "unit_price": "0.00017"
+      "unit_price": "0.01"
     },
     {
       "currency": "USD",
-      "metric_type": "compute seconds",
+      "metric_type": "1000 characters",
       "model": "xai/tts/v1",
       "provider": "fal",
       "raw": {
         "currency": "USD",
         "endpoint_id": "xai/tts/v1",
-        "unit": "compute seconds",
-        "unit_price": 7e-05
+        "unit": "1000 characters",
+        "unit_price": 0.015
       },
-      "unit_price": "0.00007"
+      "unit_price": "0.015"
     },
     {
       "currency": "USD",
@@ -21416,13 +21377,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000017444",
-          "input_cache_read": "0.000000017444",
-          "prompt": "0.00000008722"
+          "completion": "0.00000016604",
+          "input_cache_read": "0.000000016604",
+          "prompt": "0.00000008302"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "8.722E-8"
+      "unit_price": "8.302E-8"
     },
     {
       "currency": "USD",
@@ -21431,13 +21392,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000017444",
-          "input_cache_read": "0.000000017444",
-          "prompt": "0.00000008722"
+          "completion": "0.00000016604",
+          "input_cache_read": "0.000000016604",
+          "prompt": "0.00000008302"
         },
         "source_metric": "completion"
       },
-      "unit_price": "1.7444E-7"
+      "unit_price": "1.6604E-7"
     },
     {
       "currency": "USD",
@@ -21698,13 +21659,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001963416",
-          "input_cache_read": "0.000000081809",
-          "prompt": "0.000000981708"
+          "completion": "0.000001598364",
+          "input_cache_read": "0.0000000665985",
+          "prompt": "0.000000799182"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "9.81708E-7"
+      "unit_price": "7.99182E-7"
     },
     {
       "currency": "USD",
@@ -21713,13 +21674,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000001963416",
-          "input_cache_read": "0.000000081809",
-          "prompt": "0.000000981708"
+          "completion": "0.000001598364",
+          "input_cache_read": "0.0000000665985",
+          "prompt": "0.000000799182"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000001963416"
+      "unit_price": "0.000001598364"
     },
     {
       "currency": "USD",
@@ -30792,12 +30753,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000091",
-          "prompt": "0.0000002275"
+          "completion": "0.00000024",
+          "prompt": "0.00000012"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "2.275E-7"
+      "unit_price": "1.2E-7"
     },
     {
       "currency": "USD",
@@ -30806,12 +30767,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000091",
-          "prompt": "0.0000002275"
+          "completion": "0.00000024",
+          "prompt": "0.00000012"
         },
         "source_metric": "completion"
       },
-      "unit_price": "9.1E-7"
+      "unit_price": "2.4E-7"
     },
     {
       "currency": "USD",
@@ -30848,13 +30809,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000035",
-          "input_cache_read": "0.0000000175",
-          "prompt": "0.0000000875"
+          "completion": "0.00000055",
+          "prompt": "0.00000009"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "8.75E-8"
+      "unit_price": "9E-8"
     },
     {
       "currency": "USD",
@@ -30863,13 +30823,12 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000035",
-          "input_cache_read": "0.0000000175",
-          "prompt": "0.0000000875"
+          "completion": "0.00000055",
+          "prompt": "0.00000009"
         },
         "source_metric": "completion"
       },
-      "unit_price": "3.5E-7"
+      "unit_price": "5.5E-7"
     },
     {
       "currency": "USD",
@@ -31690,12 +31649,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000075",
-          "prompt": "0.00000008"
+          "completion": "0.00000125",
+          "input_cache_read": "0.00000015625",
+          "prompt": "0.0000003125"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "8E-8"
+      "unit_price": "3.125E-7"
     },
     {
       "currency": "USD",
@@ -31704,12 +31664,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.00000075",
-          "prompt": "0.00000008"
+          "completion": "0.00000125",
+          "input_cache_read": "0.00000015625",
+          "prompt": "0.0000003125"
         },
         "source_metric": "completion"
       },
-      "unit_price": "7.5E-7"
+      "unit_price": "0.00000125"
     },
     {
       "currency": "USD",
@@ -32382,7 +32343,7 @@
     {
       "currency": "USD",
       "metric_type": "input_token",
-      "model": "qwen/qwen3.8-max",
+      "model": "qwen/qwen3.8-max-0902",
       "provider": "openrouter",
       "raw": {
         "pricing": {
@@ -32398,7 +32359,7 @@
     {
       "currency": "USD",
       "metric_type": "output_token",
-      "model": "qwen/qwen3.8-max",
+      "model": "qwen/qwen3.8-max-0902",
       "provider": "openrouter",
       "raw": {
         "pricing": {
@@ -34570,13 +34531,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000014",
-          "input_cache_read": "0.00000029",
-          "prompt": "0.0000025"
+          "completion": "0.00001275",
+          "input_cache_read": "0.00000025599999",
+          "prompt": "0.00000255"
         },
         "source_metric": "prompt"
       },
-      "unit_price": "0.0000025"
+      "unit_price": "0.00000255"
     },
     {
       "currency": "USD",
@@ -34585,13 +34546,13 @@
       "provider": "openrouter",
       "raw": {
         "pricing": {
-          "completion": "0.000014",
-          "input_cache_read": "0.00000029",
-          "prompt": "0.0000025"
+          "completion": "0.00001275",
+          "input_cache_read": "0.00000025599999",
+          "prompt": "0.00000255"
         },
         "source_metric": "completion"
       },
-      "unit_price": "0.000014"
+      "unit_price": "0.00001275"
     },
     {
       "currency": "USD",
